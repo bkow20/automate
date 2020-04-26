@@ -6,10 +6,12 @@
 	</head>
 	<body>
 		<div>
-			<h1>Trollbert strikes again!</h1>
-			<img src='troll.jpg' alt='troll'>
+			<h1>Trollbert strikes again.</h1>
+			<br>
+			<img src="{{ url_for('static', filename='troll.jpg') }}" width='175' height='290'>
 			<div class="content">
-				<p>You have been trolled by Barg. Please decrease the sincerity in your comment and try again.</p>
+				<p>You have been trolled by Barg. Please decrease the sincerity of your comment and try again.
+				</p>
 			</div>
 		</div>
 	</body>
