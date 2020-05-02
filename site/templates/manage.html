@@ -15,16 +15,18 @@
 				The latest price of AAL is: ${{ americanPrice }}
 				<br><br>
 				Please leave us some feedback.<br><br></label>
-				 <form action="{{ url_for('home') }}" method="POST" id='commentform'>
+	 			<form action="{{ url_for('home') }}" method="POST" id='commentform'>
       				<label>Name:</label>
       				<input type="text" name="name" style="width: 100px;">
       				<input type="submit" value="Submit">
       			</form>
       			<br>
       				<textarea rows='4' cols='50' name="comment" form='commentform'>Comment here...</textarea>
-      			      				
     			{% for comment in comments %}
     			<p>{{comment.comment}}&nbsp;-{{comment.name}}</p>
+    			<form action="{{ url_for('manage') }}" method="POST">
+    				<input type="hidden" value="{{comment.comment}}" name="comment">
+    				<input type="submit" value="Delete">
     			{% endfor %}
 			</div>
 		</div>
