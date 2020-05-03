@@ -10,11 +10,11 @@
 			<br>
 			<img src="{{ url_for('static', filename='trollbert.jpg') }}" width='150' height='290'>
 			<div class="content">
-				<label>You have been trolled by Barg. Please decrease the sincerity of your comment and try again.
-				<br><br>
-				The latest price of AAL is: ${{ americanPrice }}
-				<br><br>
-				Please leave us some feedback.<br><br></label>
+				<p>You have been trolled by Barg. Please decrease the sincerity of your comment and try again.</p>
+
+				<p>If you came here to check the latest price of American Airlines stock (AAL), it is: ${{ americanPrice }}
+				</p>
+				<p>Please leave us some feedback.</p>
 	 			<form action="{{ url_for('home') }}" method="POST" id='commentform'>
       				<label>Name:</label>
       				<input type="text" name="name" style="width: 100px;">
