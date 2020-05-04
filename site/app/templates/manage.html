@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel= "stylesheet" type="text/css" href= "{{ url_for('static', filename='main.css') }}">
+		<title>Trollbert</title>
+	</head>
+	<body>
+		<div>
+			<h1>Trollbert strikes again.</h1>
+			<br>
+			<img src="{{ url_for('static', filename='trollbert.jpg') }}" width='150' height='290'>
+			<div class="content">
+				<p>You have been trolled by Barg. Please decrease the sincerity of your comment and try again.</p>
+
+				<p>If you came here to check the latest price of American Airlines stock (AAL), it is: ${{ americanPrice }}
+				</p>
+				<p>Please leave us some feedback.</p>
+	 			<form action="{{ url_for('home') }}" method="POST" id='commentform'>
+      				<label>Name:</label>
+      				<input type="text" name="name" style="width: 100px;">
+      				<input type="submit" value="Submit">
+      			</form>
+      			<br>
+      				<textarea rows='4' cols='50' name="comment" form='commentform'>Comment here...</textarea>
+    			{% for comment in comments %}
+    			<p>{{comment.comment}}&nbsp;-{{comment.name}}</p>
+    			<form action="{{ url_for('manage') }}" method="POST">
+    				<input type="hidden" value="{{comment.comment}}" name="comment">
+    				<input type="submit" value="Delete">
+    			{% endfor %}
+			</div>
+		</div>
+	</body>
+</html>
