@@ -44,5 +44,5 @@ def manage():
 	return render_template('manage.html', comments=comments, americanPrice=americanPrice)
 
 if __name__ == "__main__":
-	app.run(debug=False)
+	app.run(debug=True)
 
