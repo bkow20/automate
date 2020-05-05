@@ -2,6 +2,7 @@ import os
 import stockquotes
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
+import logging
 
 
 
@@ -46,3 +47,5 @@ def manage():
 if __name__ == "__main__":
 	app.run(debug=True)
 
+app.logger.addHandler(logging.StreamHandler(sys.stdout))
+app.logger.setLevel(logging.ERROR)
